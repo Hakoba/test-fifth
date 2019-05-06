@@ -29,10 +29,15 @@
               <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn
-                 :disabled="!valid || loading"
+                 :disabled="!valid"
                  class="white"
-                 :loading="loading"
+                
                  @click="onSubmit">Create Acc</v-btn>
+                 <v-btn
+                
+                 class="white"
+                
+                 @click="getThat">Test</v-btn>
               </v-card-actions>
             </v-card>
           </v-flex>
@@ -42,6 +47,7 @@
 
 <script>
   import mainHeader from '../components/header'
+  import axios from 'axios'
 export default {
   data () {
     return {
@@ -65,14 +71,30 @@ export default {
     }
   },
   methods: {
-    onSubmit () {
+     onSubmit () {
       if (this.$refs.form.validate()) {
         const user = {
-          email: this.email,
+          username: this.email,
           password: this.password
         }
-        
+        console.log(user)
+        // this.$store.dispatch('userRegistration', user);     
+     axios.post('/auth/register', user)
+        .then((res) => {
+         
+          this.$router.push('/')
+        })
+        .catch((err)=>{
+          console.log('something wrong:  ', err)
+        })
+        console.log('done')
+  
+  
       }
+    }, 
+    getThat() {
+        // this.$store.dispatch('userRegistration'); // Удалить потом
+
     }
   },
   computed: {

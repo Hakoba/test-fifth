@@ -10,8 +10,8 @@
             class="white--text"
           >
             <img src="../../assets/vuetify.png" alt="Vuetify.js" height="200">
-            <h1 class="white--text mb-2 display-1 text-xs-center">Мультистраничное приложение</h1>
-            <div class="subheading mb-3 text-xs-center">РРррР</div>
+            <h1 class="white--text mb-2 display-1 text-xs-center">Название приложения</h1>
+            <div class="subheading mb-3 text-xs-center">Lorem ipsum, dolor sit amet consectetur adipisicing.</div>
           
           </v-layout>
         </v-parallax>

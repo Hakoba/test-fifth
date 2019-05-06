@@ -1,6 +1,6 @@
 <template>
  <v-app light>
-   <main-header />
+   <main-header :showRoutes="true" />
   <first-section />
   <second-section />
   

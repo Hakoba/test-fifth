@@ -23,9 +23,9 @@
               <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn
-                 :disabled="!valid || loading"
+                 :disabled="!valid"
                  class="white"
-                 :loading="loading"
+          
                  @click="onSubmit">Submit</v-btn>
               </v-card-actions>
             </v-card>
@@ -36,6 +36,7 @@
 
 <script>
   import mainHeader from '../components/header'
+  import axios from 'axios'
 export default {
   data () {
     return {
@@ -53,15 +54,19 @@ export default {
     }
   },
   methods: {
-    onSubmit () {
+   async onSubmit () {
       if (this.$refs.form.validate()) {
         const user = {
-          email: this.email,
+          username: this.email,
           password: this.password
         }
-       
+        console.log(user)
+        // this.$store.dispatch('userRegistration', user);     
+         const res = axios.post('/auth/login', user)
+            console.log(res)
+  
       }
-    }
+    }, 
   },
   computed: {
    
