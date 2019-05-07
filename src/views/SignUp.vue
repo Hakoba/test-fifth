@@ -92,10 +92,7 @@ export default {
   
       }
     }, 
-    getThat() {
-        // this.$store.dispatch('userRegistration'); // Удалить потом
-
-    }
+  
   },
   computed: {
    

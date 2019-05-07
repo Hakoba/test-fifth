@@ -3,7 +3,7 @@
     <main-header :showRoutes="true"/>
     <v-layout column align-center justify-center>
       <v-card  align-center justify-center >
-            <table>
+            <table v-if='users.length != 0'>
             <tr>
             <th>number</th>
             <th>Name</th>
@@ -18,7 +18,7 @@
             </table>
 
       </v-card>
-      <v-btn primary @click="getUsers">Клик</v-btn>
+      <v-btn primary @click="getUsers">Click</v-btn>
     </v-layout>
   </v-app>
 </template>
